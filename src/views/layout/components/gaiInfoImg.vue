@@ -3,7 +3,7 @@
     <div :style="{'height': isphone() ? 'auto' : clientHeight +'px', 'overflow-y': 'auto'}">
       <el-row>
         <el-col>已设置头像</el-col>
-        <el-col class="Info-Img margin-top-5"><img :src="img_data" :onerror="user.userinfo.sex==2?defaultImg2:defaultImg" alt="" class="img-md img-circle"></el-col>
+        <el-col class="Info-Img margin-top-5"><img :src="img_data" :onerror="user.sex==2?defaultImg2:defaultImg" alt="" class="img-md img-circle"></el-col>
         <el-col class="mar-top">选择系统内置头像</el-col>
         <el-col class="morenF">
           <img v-for="(item,index) in avatarData" :key="index" :src="item" class="img-md" alt="" @click="xuanzeImg(index+1)">
@@ -110,7 +110,7 @@ export default {
       }
       imgEdit(data)
         .then(rs => {
-          this.user.userinfo.head = this.img_data
+          this.user.head = this.img_data
           this.$store.dispatch('setUserinfo', this.user)
           this.$message.success('提交成功')
           this.$emit('CB-ImgDialog', false)

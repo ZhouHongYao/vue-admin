@@ -7,7 +7,9 @@ import '@babel/polyfill'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import Cookies from 'js-cookie'
 import Element from 'element-ui'
-import './styles/element-variables.scss'
+import 'element-ui/lib/theme-chalk/index.css'
+import 'element-ui/lib/theme-chalk/display.css' // Element 基于断点的隐藏类
+import 'element-ui/lib/theme-chalk/base.css' // Element 内置过渡动画
 import '@/styles/index.scss' // global css
 
 Vue.use(Element, {

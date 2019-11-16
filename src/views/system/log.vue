@@ -3,8 +3,8 @@
     <div class="app-container">
       <div class="filter-container">
         <el-input v-model="listQuery.keys" :clearable="true" style="width: 260px;" class="margin-bottom-10" placeholder="检索：用户名、URL、IP" @keyup.enter.native="handleFilter" />
-        <el-date-picker v-model="listQuery.times" :picker-options="pickerOptions2" class="margin-bottom-10" type="daterange" start-placeholder="开始日期" end-placeholder="结束日期" align="right" value-format="yyyy-MM-dd" />
-        <el-button v-waves class="margin-bottom-10" type="primary" plain icon="el-icon-search" @click="handleFilter">搜索</el-button>
+        <el-date-picker v-model="listQuery.times" :picker-options="pickerOptions2" class="margin-bottom-10 margin-left-10" type="daterange" start-placeholder="开始日期" end-placeholder="结束日期" align="right" value-format="yyyy-MM-dd" />
+        <el-button v-waves class="margin-bottom-10 margin-left-10" type="primary" plain icon="el-icon-search" @click="handleFilter">搜索</el-button>
       </div>
       <el-table v-loading="listLoading" :data="dataList" element-loading-text="数据载入中" fit stripe @selection-change="handleSelectionChange">
         <el-table-column min-width="150px" prop="name" label="操作用户" show-overflow-tooltip />

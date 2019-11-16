@@ -13,7 +13,7 @@
         </keep-alive>
       </el-tooltip>
 
-      <el-tooltip v-if="is_pc" effect="dark" content="引导" placement="bottom" class="hidden-md-and-down">
+      <el-tooltip v-if="isShow" effect="dark" content="引导" placement="bottom" class="hidden-md-and-down">
         <Guide class="guide pointer right-menu-item" />
       </el-tooltip>
 
@@ -76,7 +76,7 @@ export default {
   },
   data() {
     return {
-      is_pc: false,
+      isShow: false,
       dialogVisible: false,
       passwordDialog: false,
       defaultImg: 'this.src="' + require('@/assets/images/photos/1.png') + '"',
@@ -86,14 +86,16 @@ export default {
   computed: {
     ...mapGetters(['sidebar', 'name', 'head', 'account', 'group']),
     ...mapState({
-      sex: state => state.user.userinfo.sex
+      sex: state => state.user.sex
     })
   },
   activated() {
-    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-      this.is_pc = false
+    var userAgent = navigator.userAgent
+    var isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1 //
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || isIE) {
+      this.isShow = false
     } else {
-      this.is_pc = true
+      this.isShow = true
     }
   },
   methods: {
@@ -124,64 +126,64 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
 .navbar {
-  height: 50px;
-  line-height: 50px;
-  border-radius: 0px !important;
-  .hamburger-container {
-    line-height: 58px;
     height: 50px;
-    float: left;
-    padding: 0 10px;
-  }
-  .breadcrumb-container {
-    float: left;
-  }
-  .errLog-container {
-    display: inline-block;
-    vertical-align: top;
-  }
-  .right-menu {
-    float: right;
-    height: 100%;
-    &:focus {
-      outline: none;
+    line-height: 50px;
+    border-radius: 0px !important;
+    .hamburger-container {
+        line-height: 58px;
+        height: 50px;
+        float: left;
+        padding: 0 10px;
     }
-    .right-menu-item {
-      display: inline-block;
-      margin: 0 8px;
+    .breadcrumb-container {
+        float: left;
     }
-    .guide {
-      vertical-align: 12px;
+    .errLog-container {
+        display: inline-block;
+        vertical-align: top;
     }
-    .screenfull {
-      height: 20px;
-    }
-    .international {
-      vertical-align: top;
-    }
-    .theme-switch {
-      vertical-align: 15px;
-    }
-    .avatar-container {
-      height: 50px;
-      margin-right: 30px;
-      .avatar-wrapper {
-        cursor: pointer;
-        margin-top: 5px;
-        position: relative;
-        .user-avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
+    .right-menu {
+        float: right;
+        height: 100%;
+        &:focus {
+            outline: none;
         }
-        .el-icon-caret-bottom {
-          position: absolute;
-          right: -20px;
-          top: 25px;
-          font-size: 12px;
+        .right-menu-item {
+            display: inline-block;
+            margin: 0 8px;
         }
-      }
+        .guide {
+            vertical-align: 12px;
+        }
+        .screenfull {
+            height: 20px;
+        }
+        .international {
+            vertical-align: top;
+        }
+        .theme-switch {
+            vertical-align: 15px;
+        }
+        .avatar-container {
+            height: 50px;
+            margin-right: 30px;
+            .avatar-wrapper {
+                cursor: pointer;
+                margin-top: 5px;
+                position: relative;
+                .user-avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                }
+                .el-icon-caret-bottom {
+                    position: absolute;
+                    right: -20px;
+                    top: 25px;
+                    font-size: 12px;
+                }
+            }
+        }
     }
-  }
 }
 </style>

@@ -528,7 +528,7 @@ a.text-muted:focus {
 .text-primary,
 a.text-primary:hover,
 a.text-primary:focus {
-	color: #128ef2
+	color: #128ef2 !important
 }
 
 .text-info,
@@ -829,4 +829,11 @@ a.text-dark:focus {
 .img-holder img {
 	max-width: 100%;
 	border-radius: 0;
+}
+
+.chart-wrapper {
+	background: #fff;
+	padding: 16px 16px 0;
+	margin-bottom: 32px;
+	width: 100%
 }

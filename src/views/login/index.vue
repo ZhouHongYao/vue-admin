@@ -94,7 +94,6 @@ export default {
         phone: '18001855966',
         token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1aWQiOiIxIiwiZ3JvdXAiOjEsInZlcnNpb24iOiI1IiwiaWF0IjoxNTczODA2ODEzLCJuYmYiOjE1NzM4MDY4MTMsImV4cCI6MTU3MzgyMTIxM30.Gl_3P5LSSiCYJbpwuOX7xSNuQ9aCYb1SHUEEsD2rt-nAr-owwbgNQBBEGSuSTtNRRzfKbq4V-POnztCuPpS2-Cq4Lvop6fxXmUvxUByyR4UX-q3kiJxAN3j1LnzJnaDDVP58qMmFtIPRE1fmTFa0loOPZVyMa2KTfJQN_-z4Eyo'
       }
-      console.log(this)
       this.$store.commit('setUserinfo', user)
       this.$router.push({ path: '/' })
       return

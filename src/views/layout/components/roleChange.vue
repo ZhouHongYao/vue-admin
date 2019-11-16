@@ -25,17 +25,17 @@ export default {
     }
   },
   computed: mapState({
-    userinfo: state => state.user.userinfo
+    user: state => state.user
   }),
   activated() {
-    this.title = this.userinfo.group_title
-    this.authGroup = this.userinfo.authGroup
+    this.title = this.user.group_title
+    this.authGroup = this.user.authGroup
     this.authGroup.splice(
       this.authGroup.findIndex(v => v.title == this.title),
       1
     )
     // 获取当前用户信息
-    userChange(this.userinfo.group)
+    userChange(this.user.group)
       .then(rs => {
         this.$store.dispatch('setUserinfo', rs)
       })

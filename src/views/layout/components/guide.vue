@@ -79,7 +79,7 @@ export default {
   computed: {
     ...mapState({
       guide_show: state => state.guide_show,
-      authGroup: state => state.user.userinfo.authGroup
+      authGroup: state => state.user.authGroup
     })
   },
   mounted() {
