@@ -2,7 +2,7 @@
   <div style="overflow-x: auto;">
     <div class="app-container">
       <div class="filter-container">
-        <el-input v-model="listQuery.keys" :clearable="true" style="width: 200px;" class="filter-item" placeholder="检索：内容名称" @keyup.enter.native="handleFilter" />
+        <el-input v-model="listQuery.keys" :clearable="true" style="width: 200px;" class="filter-item margin-right-5" placeholder="检索：内容名称" @keyup.enter.native="handleFilter" />
         <el-button v-waves class="filter-item margin-right-10" type="primary" plain icon="el-icon-search" @click="handleFilter">搜索</el-button>
         <el-button v-if="authCheck(8)" v-waves class="filter-item" type="primary" icon="el-icon-circle-plus-outline" @click="handleADD">添加</el-button>
       </div>

@@ -169,7 +169,7 @@ export const publicMixin = {
   methods: {
     // 判断角色是否是学生
     currentRole() {
-      return this.$store.state.user.userinfo.group == 3
+      return this.$store.state.user.group == 3
     },
     // 判断是否能取消报名
     isBm(time) {

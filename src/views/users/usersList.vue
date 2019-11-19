@@ -2,13 +2,13 @@
   <div>
     <div class="app-container">
       <div class="filter-container">
-        <el-input v-model="listQuery.keys" :clearable="true" style="width: 200px;" class="filter-item" placeholder="检索：用户名、姓名" @keyup.enter.native="handleFilter" />
-        <el-select v-model="listQuery.status" clearable class="filter-item" placeholder="根据状态筛选用户">
+        <el-input v-model="listQuery.keys" :clearable="true" style="width: 200px;" class="filter-item margin-right-5" placeholder="检索：用户名、姓名" @keyup.enter.native="handleFilter" />
+        <el-select v-model="listQuery.status" clearable class="filter-item margin-right-5" placeholder="根据状态筛选用户">
           <el-option v-for="item in UserStatusOptions" :key="item.id" :label="item.title" :value="item.id" />
         </el-select>
-        <el-button v-waves class="filter-item" type="primary" plain icon="el-icon-search" @click="handleFilter">搜索</el-button>
-        <el-button v-if="authCheck(17)" v-waves class="filter-item margin-left-10" type="primary" icon="el-icon-circle-plus-outline" @click="handleCreate">添加</el-button>
-        <el-button v-if="multipleSelection.length > 0 && authCheck(20)" v-waves class="filter-item" type="danger" icon="el-icon-delete" @click="handlePlDelete">批量移除</el-button>
+        <el-button v-waves class="filter-item margin-right-10" type="primary" plain icon="el-icon-search" @click="handleFilter">搜索</el-button>
+        <el-button v-if="authCheck(17)" v-waves class="filter-item margin-right-10" type="primary" icon="el-icon-circle-plus-outline" @click="handleCreate">添加</el-button>
+        <el-button v-if="multipleSelection.length > 0 && authCheck(20)" v-waves class="filter-item margin-right-10" type="danger" icon="el-icon-delete" @click="handlePlDelete">批量移除</el-button>
         <goBack class="filter-item" />
       </div>
 

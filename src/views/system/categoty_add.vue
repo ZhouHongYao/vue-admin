@@ -43,10 +43,10 @@ export default {
         this.title = '编辑节点'
         this.getRead()
       }
-      if (this.path && this.path.length > 0) {
-        this.title = '添加节点'
-        this.form.path = this.path
-      }
+    //   if (this.path && this.path.length > 0) {
+    //     this.title = '添加节点'
+    //     this.form.path = this.path
+    //   }
     },
     // 提交
     handleBao(form) {

@@ -27,12 +27,18 @@
       </el-radio-group>
 
       <el-row :gutter="15" class="margin-top-40">
+
         <el-col :sm="24">
           <el-button :loading="loading" size="large" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">本地登录</el-button>
         </el-col>
         <!-- <el-col :sm="24" :lg="16">
           <el-button size="large" plain type="success" style="width:100%;margin-bottom:30px;">前往统一身份认证登录</el-button>
         </el-col> -->
+        <el-col :sm="24" class="text-primary">
+          账号：admin 密码：123
+          <br>
+          账号：test 密码：123
+        </el-col>
       </el-row>
 
     </el-form>

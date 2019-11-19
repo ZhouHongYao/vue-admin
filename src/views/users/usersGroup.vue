@@ -2,8 +2,8 @@
   <div>
     <div class="app-container">
       <div class="filter-container">
-        <el-input v-model="listQuery.keys" :clearable="true" style="width: 250px;" class="filter-item" placeholder="检索：用户组名称、教师、描述" @keyup.enter.native="handleFilter" />
-        <el-select v-model="listQuery.status" clearable class="filter-item" placeholder="根据状态筛选用户组" style="width: 180px;">
+        <el-input v-model="listQuery.keys" :clearable="true" style="width: 250px;" class="filter-item margin-right-5" placeholder="检索：用户组名称、教师、描述" @keyup.enter.native="handleFilter" />
+        <el-select v-model="listQuery.status" clearable class="filter-item margin-right-5" placeholder="根据状态筛选用户组" style="width: 180px;">
           <el-option v-for="item in GroupStatusOptions" :key="item.id" :label="item.title" :value="item.id" />
         </el-select>
         <el-button v-waves class="filter-item margin-right-10" type="primary" plain icon="el-icon-search" @click="handleFilter">搜索</el-button>

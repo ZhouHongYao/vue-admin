@@ -26,10 +26,7 @@ axios.interceptors.response.use(response => {
         break
       case 401:
         err.message = err.response.data || '未授权，请重新登录'
-        store.dispatch('setUserinfo', {
-          userinfo: {},
-          rules: []
-        })
+        store.dispatch('setUserinfo', {})
         store.dispatch('setRoles', [])
         store.dispatch('setRouters', [])
         store.dispatch('setAddRouters', [])

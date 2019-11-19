@@ -1,9 +1,18 @@
 import Mock from 'mockjs'
 import login from './login'
 import log from './system/log'
+import node from './system/node'
+import user from './system/user'
+import userGroup from './system/userGroup'
+import category from './system/category'
+
 const mocks = [
   ...login,
-  ...log
+  ...log,
+  ...node,
+  ...user,
+  ...userGroup,
+  ...category
 ]
 
 function XHR2ExpressReqWrap(respond) {
@@ -13,7 +22,7 @@ function XHR2ExpressReqWrap(respond) {
       const { body, type, url } = options
       result = respond({
         method: type,
-        body: JSON.parse(body),
+        body: body,
         query: url
       })
     } else {

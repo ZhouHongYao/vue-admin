@@ -43,5 +43,4 @@ export default [{
   url: '/admin-api/log',
   type: 'delete',
   res: res
-}
-]
+}]

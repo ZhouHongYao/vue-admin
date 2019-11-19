@@ -27,17 +27,20 @@ import Layout from '@/views/layout/Layout'
 export const constantRouterMap = [{
   path: '/login',
   component: () => import('@/views/login/index'),
-  hidden: true
+  hidden: true,
+  name: 'login'
 },
 {
   path: '/404',
   component: () => import('@/views/errorPage/404'),
-  hidden: true
+  hidden: true,
+  name: '404'
 },
 {
   path: '/403',
   component: () => import('@/views/errorPage/403'),
-  hidden: true
+  hidden: true,
+  name: '403'
 },
 {
   path: '/500',
@@ -59,8 +62,7 @@ export const constantRouterMap = [{
       noCache: true
     }
   }]
-}
-]
+}]
 
 export default new Router({
   mode: 'history', // require service support
