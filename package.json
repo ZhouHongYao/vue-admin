@@ -56,7 +56,9 @@
         "svg-sprite-loader": "^4.1.6",
         "v-viewer": "^1.4.2",
         "vue-template-compiler": "^2.6.10",
-        "vue-tree-halower": "^1.8.3"
+        "vue-tree-halower": "^1.8.3",
+        "vue-count-to": "^1.0.13",
+        "echarts": "^4.5.0"
     },
     "eslintConfig": {
         "root": true,
