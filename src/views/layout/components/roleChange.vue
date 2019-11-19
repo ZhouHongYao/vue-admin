@@ -37,7 +37,7 @@ export default {
     // 获取当前用户信息
     userChange(this.user.group)
       .then(rs => {
-        this.$store.dispatch('setUserinfo', rs)
+        // this.$store.dispatch('setUserinfo', rs)
       })
       .catch(() => {})
   },
@@ -47,7 +47,7 @@ export default {
     handleCommand(val) {
       userChange(val)
         .then(rs => {
-          this.$store.dispatch('setUserinfo', rs)
+        //   this.$store.dispatch('setUserinfo', rs)
           this.$router.push({ path: '/' })
           this.$store.dispatch('setRoles', [])
           this.$store.dispatch('setAddRouters', []).then(() => {

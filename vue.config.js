@@ -34,20 +34,12 @@ module.exports = {
       errors: true
     },
     proxy: {
-      // detail: https://cli.vuejs.org/config/#devserver-proxy
-    //   '/commonapi': { // 遇见/commonapi才做代理
-    //     target: `http://apicommontest.hongyantu.com`, // 要访问的跨域的域名
-    //     changeOrigin: true // 开启代理
-    //     // pathRewrite: { // commonapi 重写为 commonapi
-    //     //   '^/commonapi': 'commonapi'
-    //     // }
-    //   },
-      '/admin-api': {
-        target: 'http://a.gsdzone.net/tjjt/new/api',
-        changeOrigin: true
-        // pathRewrite: {
-        //   '^/admin-api': 'admin-api'
-        // }
+      [process.env.VUE_APP_BASE_API]: {
+        target: `http://127.0.0.1:${port}`,
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: ''
+        }
       }
     }
   },

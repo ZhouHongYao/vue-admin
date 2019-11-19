@@ -20,6 +20,7 @@ import './icons' // icon
 import './errorLog' // error log
 import './permission' // permission control
 import './plugin' // component plugin
+import '../src/mock/mock-server.js'
 
 Vue.config.productionTip = false
 

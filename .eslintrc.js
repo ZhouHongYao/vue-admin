@@ -26,6 +26,7 @@ module.exports = {
     'vue/name-property-casing': ['error', 'PascalCase'],
     'vue/no-v-html': 'off',
     'vue/require-prop-types': 0,
+    'vue/no-use-v-if-with-v-for': 0,
     'accessor-pairs': 2,
     'arrow-spacing': [2, {
       'before': true,

@@ -8,5 +8,6 @@ module.exports = {
       'corejs': '3', // 声明corejs版本
       'useBuiltIns': 'entry'
     }
-  ]]
+  ]],
+  plugins: ['@babel/plugin-transform-runtime']
 }

@@ -17,24 +17,10 @@ const pageSize = 10
 const userGroup = []
 
 /**
- * [identity 用户身份类型]
- * @type {Array}
- */
-const identity = [{
-  id: '1',
-  title: '统一身份认证用户'
-}, {
-  id: '2',
-  title: '内置用户'
-}]
-
-/**
  * [user 用户登录信息]
  * @type {Object}
  */
 const user = {
-  userinfo: {},
-  rules: []
 }
 
 /**
@@ -94,53 +80,11 @@ const routers = []
 const originalTheme = '#409EFF'
 
 /**
- * [last_time 记录最后操作时间戳]
- * @type {booler}
- */
-const last_time = ''
-
-/**
  * clientHeight 窗口默認大小
  * @author zhy 2019-01-5
  * @type {Array}
  */
 const clientHeight = document.documentElement.clientHeight - 220
-
-/**
- * [reviewData 审核状态]
- * @author zhy 2019-01-3
- * @type {Array}
- */
-const reviewData = [{
-  'id': 1,
-  'title': '待审核',
-  'color': 'text-muted'
-},
-{
-  'id': 2,
-  'title': '审核通过',
-  'color': 'text-success'
-},
-{
-  'id': 3,
-  'title': '退回修改',
-  'color': 'text-danger'
-}
-]
-
-/**
- * [xisuoData 系所]
- * @author zhy 2019-01-3
- * @type {Array}
- */
-const xisuoData = []
-
-/**
- * [xueyuanData 学院]
- * @author zhy 2019-01-3
- * @type {Array}
- */
-const xueyuanData = []
 
 /**
  * [avatar 头像]
@@ -160,50 +104,21 @@ const nations = ['汉族', '蒙古族', '回族', '藏族', '维吾尔族', '苗
   '俄罗斯族', '鄂温克族', '德昂族', '保安族', '裕固族', '京族', '塔塔尔族', '独龙族', '鄂伦春族', '赫哲族', '门巴族', '珞巴族', '基诺族', '川青族'
 ]
 
-/**
- * [zzmmData 政治面貌]
- * @author zhy 2019-01-10
- * @type {Array}
- */
-const zzmmData = []
-
-/**
- * [hjdjData 获奖等级]
- * @author zhy 2019-01-25
- * @type {Array}
- */
-const hjdjData = []
-
-/**
- * [xmjbData 项目类别]
- * @author zhy 2019-01-25
- * @type {Array}
- */
-const xmjbData = []
-
 const state = {
   pageSizes: pageSizes,
   pageSize: pageSize,
   user: user,
   sliderNavData: sliderNav_data,
-  last_time: last_time,
   methodData: methodData,
   roles: roles,
   addRouters: addRouters,
   routers: routers,
   userGroup: userGroup,
-  identity: identity,
   originalTheme: originalTheme,
   clientHeight: clientHeight,
-  reviewData: reviewData,
-  xisuoData: xisuoData,
-  xueyuanData: xueyuanData,
   avatarData: avatarData,
   guide_show: guide_show,
-  nations: nations,
-  zzmmData: zzmmData,
-  hjdjData: hjdjData,
-  xmjbData: xmjbData
+  nations: nations
 }
 
 export default state

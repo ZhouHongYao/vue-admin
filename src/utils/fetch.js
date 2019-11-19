@@ -81,11 +81,7 @@ axios.interceptors.response.use(response => {
 
 // 获取token
 function checktoken() {
-  let token
-  if (store && store.state.user && store.state.user.userinfo && store.state.user.userinfo.token) {
-    token = store.state.user.userinfo.token
-  }
-  return token
+  return store && store.state.user && store.state.user.toke ? store.state.user.token : ''
 }
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'

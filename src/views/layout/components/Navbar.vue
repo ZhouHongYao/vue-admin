@@ -91,7 +91,7 @@ export default {
   },
   activated() {
     var userAgent = navigator.userAgent
-    var isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1 //
+    var isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1
     if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || isIE) {
       this.isShow = false
     } else {

@@ -24,7 +24,7 @@
 </template>
 <script>
 import waves from '@/directive/waves' // 水波纹指令
-import { changepwd } from '@/api/system/user'
+// import { changepwd } from '@/api/system/user'
 // import { encrypt } from '@/api/jsencrypt/index'
 export default {
   directives: {
@@ -132,33 +132,33 @@ export default {
         // const oldpwd = await encrypt(this.form.oldpwd)
         // const newpwd = await encrypt(this.form.newpwd)
         // const confirmpwd = await encrypt(this.form.confirmpwd)
-        changepwd({
-          oldpwd: oldpwd,
-          newpwd: newpwd,
-          confirmpwd: confirmpwd
-        })
-          .then(rs => {
-            this.$message({
-              type: 'success',
-              message: '密码修改成功，即将退出请重新登录！'
-            })
-            this.loadingBiao = false
-            this.$emit('CB-passwordDialog', false)
-            this.$refs['form'].resetFields()
-            this.$store.dispatch('setUserinfo', {
-              userinfo: {},
-              rules: []
-            })
-            this.$store.dispatch('setRoles', [])
-            this.$store.dispatch('setRouters', [])
-            this.$store.dispatch('setAddRouters', [])
-            this.$router.push({
-              name: 'login'
-            })
-          })
-          .catch(() => {
-            this.loadingBiao = false
-          })
+        // changepwd({
+        //   oldpwd: oldpwd,
+        //   newpwd: newpwd,
+        //   confirmpwd: confirmpwd
+        // })
+        //   .then(rs => {
+        //     this.$message({
+        //       type: 'success',
+        //       message: '密码修改成功，即将退出请重新登录！'
+        //     })
+        //     this.loadingBiao = false
+        //     this.$emit('CB-passwordDialog', false)
+        //     this.$refs['form'].resetFields()
+        //     this.$store.dispatch('setUserinfo', {
+        //       userinfo: {},
+        //       rules: []
+        //     })
+        //     this.$store.dispatch('setRoles', [])
+        //     this.$store.dispatch('setRouters', [])
+        //     this.$store.dispatch('setAddRouters', [])
+        //     this.$router.push({
+        //       name: 'login'
+        //     })
+        //   })
+        //   .catch(() => {
+        //     this.loadingBiao = false
+        //   })
       } catch (e) {
         this.loadingBiao = false
       }

@@ -111,7 +111,7 @@ export default {
       imgEdit(data)
         .then(rs => {
           this.user.head = this.img_data
-          this.$store.dispatch('setUserinfo', this.user)
+          //   this.$store.dispatch('setUserinfo', this.user)
           this.$message.success('提交成功')
           this.$emit('CB-ImgDialog', false)
         })

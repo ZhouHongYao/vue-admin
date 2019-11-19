@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import * as Driver from 'driver.js' // import driver.js
+import Driver from 'driver.js' // import driver.js
 import 'driver.js/dist/driver.min.css' // import driver.js css
 import { mapState } from 'vuex'
 
@@ -24,14 +24,6 @@ const steps = [
       title: '导航',
       description: '显示当前页面位置',
       position: 'bottom'
-    }
-  },
-  {
-    element: '.navigation',
-    popover: {
-      title: '系统导航',
-      description: '打开系统导航',
-      position: 'left'
     }
   },
   {
