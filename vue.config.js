@@ -32,21 +32,12 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    },
-    proxy: {
-      [process.env.VUE_APP_BASE_API]: {
-        target: `http://127.0.0.1:${port}`,
-        changeOrigin: true,
-        pathRewrite: {
-          ['^' + process.env.VUE_APP_BASE_API]: ''
-        }
-      }
     }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
-    name: 'vue-admin',
+    name: '矿山智慧管理平台',
     resolve: {
       alias: {
         '@': resolve('src')
@@ -82,6 +73,16 @@ module.exports = {
       .tap(options => {
         options.compilerOptions.preserveWhitespace = true
         return options
+      })
+      .end()
+
+    config.module
+      .rule('swf')
+      .test(/\.swf$/)
+      .use('url-loader')
+      .loader('url-loader')
+      .options({
+        limit: 10000
       })
       .end()
 
