@@ -8,29 +8,27 @@
       </div>
       <div v-loading="loading" class="custom-tree-container" element-loading-text="数据载入中" style="min-width:700px">
         <el-tree ref="nodeTree" :data="tableData" :expand-on-click-node="false" :props="defaultProps" :filter-node-method="filterNode" :allow-drop="allowDrop" :allow-drag="allowDrag" class="filter-tree" default-expand-all node-key="id" highlight-current empty-text="啊哦，您还没有添加内容哦！" draggable @node-drop="handleDrop">
-          <span slot-scope="{ node, data }" class="custom-tree-node">
+          <span slot-scope="{ node, data }" class="custom-tree-node" style="height: 42px;position: relative">
             <span style="min-width:140px">
               {{ node.label }}
               <el-tag size="mini" disable-transitions class="margin-left-10" type="info">ID：{{ data.id }}</el-tag>
             </span>
-            <span>
-              <span v-if="authCheck(6)" class="spanText hidden-md" style="width:70px">
-                <el-tooltip effect="dark" content="节点排序，数字越大，排列越靠前，回车确认。" placement="left">
-                  <el-input-number v-model="data.sort" :controls="false" size="small" style="width:100%" @keyup.enter.native="handleSort(data)" />
-                </el-tooltip>
-              </span>
-              <div class="spanText" style="width:250px;float:right ">
-                <el-button v-if="authCheck(8)" type="primary" plain size="mini " @click="()=> append(data.path)">
-                  <i class="el-icon-circle-plus-outline" /> 新增
-                </el-button>
-                <el-button v-if="authCheck(10)" type="primary" plain size="mini " @click="()=> edit(data.id)">
-                  <i class="el-icon-edit" /> 编辑
-                </el-button>
-                <el-button v-if="authCheck(21)" type="danger" plain size="mini" @click="() => remove(data.id)">
-                  <i class="el-icon-delete" /> 删除
-                </el-button>
-              </div>
+            <span v-if="authCheck(6)" class="hidden-md" style="width:70px;position:absolute;right:275px;height: 42px;line-height: 42px;top: 0;">
+              <el-tooltip effect="dark" content="节点排序，数字越大，排列越靠前，回车确认。" placement="left">
+                <el-input-number v-model="data.sort" :controls="false" size="small" style="width:100%" @keyup.enter.native="handleSort(data)" />
+              </el-tooltip>
             </span>
+            <div style="width:250px;position:absolute;right:0;height: 42px;line-height: 42px;top: 0;">
+              <el-button v-if="authCheck(8)" type="primary" plain size="mini " @click="()=> append(data.path)">
+                <i class="el-icon-circle-plus-outline" /> 新增
+              </el-button>
+              <el-button v-if="authCheck(10)" type="primary" plain size="mini " @click="()=> edit(data.id)">
+                <i class="el-icon-edit" /> 编辑
+              </el-button>
+              <el-button v-if="authCheck(21)" type="danger" plain size="mini" @click="() => remove(data.id)">
+                <i class="el-icon-delete" /> 删除
+              </el-button>
+            </div>
           </span>
         </el-tree>
       </div>

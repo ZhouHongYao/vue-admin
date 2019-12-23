@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :style="{'width': sidebar.opened? '235px':'36px' }" class="naver-container">
+    <div :style="{'width': sidebar.opened? '235px':'54px' }" class="naver-container">
       <div :style="{'display': sidebar.opened? 'block':'none' }"> VUE-ADMIN 管理系统</div>
     </div>
     <scroll-bar style="overflow-y: auto">
